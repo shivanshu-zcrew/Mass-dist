@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Catalog | Mass Distributors</title>
+<meta name="description" content="37 Shan-brand SKUs across biryani, BBQ, curry, specialty, and vegetarian spice mixes, available to Mass Distributors' Tamil Nadu stockist network.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">MD</span>
+      <span class="brand-text">
+        <span class="brand-name">MASS DISTRIBUTORS</span>
+        <span class="brand-sub">Tamil Nadu Super Stockist</span>
+      </span>
+    </a>
+    <nav class="nav-links" data-nav-links>
+      <a href="product-catalog.html" class="nav-link is-active">Products</a>
+      <a href="margins-schemes.html" class="nav-link">Margins &amp; Schemes</a>
+      <a href="district-network.html" class="nav-link">Distribution Network</a>
+      <a href="roi-calculator.html" class="nav-link">ROI Calculator</a>
+      <a href="apply.html" class="btn btn-amber nav-cta-mobile" style="display:none;">Become a Partner</a>
+    </nav>
+    <a href="apply.html" class="btn btn-amber nav-cta-desktop">Become a Partner</a>
+    <button class="hamburger" data-hamburger aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <div class="catalog-header container">
+    <span class="eyebrow" style="color: var(--amber-hover);">Product Catalog</span>
+    <h1>What you'd be distributing.</h1>
+    <p class="sub">37 SKUs across five categories — browse by category, search by name, or filter by pack size. Add anything of interest to your enquiry.</p>
+
+    <div class="catalog-search-row">
+      <div class="search-field">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="catalog-search" placeholder="Search products (e.g. Biryani, Nihari, Kabab)...">
+      </div>
+      <span class="result-count" id="result-count" style="margin-left: auto;"></span>
+      <div class="view-toggle">
+        <button type="button" class="view-toggle-btn" id="view-toggle-grid" data-view="grid" aria-label="Card view">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="9.5" y="4" width="5" height="16" rx="1.5"/><rect x="16" y="4" width="5" height="16" rx="1.5"/></svg>
+        </button>
+        <button type="button" class="view-toggle-btn" id="view-toggle-list" data-view="list" aria-label="List view">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="category-tabs-wrap">
+      <div class="category-tabs" id="category-tabs"></div>
+    </div>
+
+    <div class="filter-toolbar">
+      <div class="filter-group desktop-only">
+        <span class="filter-group-label">Pack size</span>
+        <div id="pack-chips-desktop" class="flex" style="gap: 8px; flex-wrap: wrap;"></div>
+        <button type="button" class="clear-filters-btn" id="clear-filters-btn" hidden>Clear filters</button>
+      </div>
+      <button type="button" class="mobile-filter-btn" id="mobile-filter-open">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        Filters
+        <span class="badge-count" id="mobile-filter-badge" hidden>0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="catalog-grid" id="product-grid"></div>
+    <div class="catalog-list" id="product-list" hidden></div>
+    <div class="load-more-wrap" id="load-more-wrap" hidden>
+      <button type="button" class="btn-load-more" id="load-more-btn">Show more</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">MD</span>
+          <span class="brand-text">
+            <span class="brand-name">MASS DISTRIBUTORS</span>
+            <span class="brand-sub">Tamil Nadu Super Stockist</span>
+          </span>
+        </a>
+        <p>Premier cash-and-carry super stockist bridging manufacturers with sub-distributors and wholesalers across Tamil Nadu.</p>
+        <p class="footer-mono">GSTN: 33ACIFM4680N1ZQ</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="heading">Site</span>
+          <a href="product-catalog.html">Products</a>
+          <a href="margins-schemes.html">Margins &amp; Schemes</a>
+          <a href="district-network.html">Distribution Network</a>
+          <a href="roi-calculator.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Partnership</span>
+          <a href="apply.html">Become a Partner</a>
+          <a href="tel:+919942675710">+91 99426 75710</a>
+          <a href="https://wa.me/919942675710">WhatsApp the desk</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Warehouse</span>
+          <span style="font-size: 14px; line-height: 1.6;">No. 42/1, ST-1, Odakkadu,<br>Chithode, Erode &ndash; 638102, TN</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mass Distributors. Cash &amp; Carry B2B Partner Network.</span>
+      <span>FSSAI Labelling Compliant &middot; High Volume Supply Network</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Detail / enquiry drawer (shared) -->
+<div class="drawer-overlay" id="drawer-overlay">
+  <div class="drawer-panel" id="drawer-panel"></div>
+</div>
+
+<!-- Mobile filter sheet (independent overlay, not shared with the drawer above) -->
+<div class="drawer-overlay" id="mobile-filter-overlay">
+  <div class="sheet-panel">
+    <div class="sheet-handle"></div>
+    <div class="sheet-content">
+      <h3 style="font-size: 16px; margin-bottom: 10px;">Pack size</h3>
+      <div id="pack-chips-sheet" class="filter-group" style="flex-wrap: wrap;"></div>
+    </div>
+    <div class="sheet-footer">
+      <button type="button" class="btn btn-outline-light" style="flex:1;" id="mobile-sheet-clear">Clear</button>
+      <button type="button" class="btn btn-amber" style="flex:1;" id="mobile-sheet-apply">Show results</button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating enquiry bar -->
+<div class="enquiry-bar" id="enquiry-bar">
+  <span class="count-text" id="enquiry-count-text"></span>
+  <button type="button" class="btn btn-amber" id="enquiry-bar-cta" style="padding: 10px 18px; font-size: 13.5px;">Review Enquiry</button>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js?v=2"></script>
+<script src="js/catalog.js?v=2"></script>
+</body>
+</html>

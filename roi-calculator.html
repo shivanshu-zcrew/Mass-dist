@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROI Calculator | Mass Distributors</title>
+<meta name="description" content="Estimate projected monthly turnover, gross profit, working capital, and annualized ROI as a Mass Distributors sub-stockist under the cash & carry model.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">MD</span>
+      <span class="brand-text">
+        <span class="brand-name">MASS DISTRIBUTORS</span>
+        <span class="brand-sub">Tamil Nadu Super Stockist</span>
+      </span>
+    </a>
+    <nav class="nav-links" data-nav-links>
+      <a href="product-catalog.html" class="nav-link">Products</a>
+      <a href="margins-schemes.html" class="nav-link">Margins &amp; Schemes</a>
+      <a href="district-network.html" class="nav-link">Distribution Network</a>
+      <a href="roi-calculator.html" class="nav-link is-active">ROI Calculator</a>
+      <a href="apply.html" class="btn btn-amber nav-cta-mobile" style="display:none;">Become a Partner</a>
+    </nav>
+    <a href="apply.html" class="btn btn-amber nav-cta-desktop">Become a Partner</a>
+    <button class="hamburger" data-hamburger aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <div class="catalog-header container">
+    <span class="eyebrow" style="color: var(--amber-hover);">ROI Calculator</span>
+    <h1>See what your distribution opportunity could look like.</h1>
+    <p class="sub">Estimate monthly turnover, gross profit, and return on your working capital under the cash &amp; carry model — based on the inputs and assumptions below. This is an estimate, not a guaranteed return.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="roi-card">
+
+        <div class="roi-inputs">
+          <h2 class="roi-inputs-title">Operational inputs</h2>
+
+          <div class="roi-slider-field">
+            <div class="roi-slider-head">
+              <label for="input-volume">Monthly stock order</label>
+              <span id="val-volume" class="roi-slider-val">2,500 cartons</span>
+            </div>
+            <input type="range" id="input-volume" min="500" max="10000" step="250" value="2500">
+            <div class="roi-slider-range"><span>500 · Town Dealer</span><span>10,000 · District Stockist</span></div>
+          </div>
+
+          <div class="roi-slider-field">
+            <div class="roi-slider-head">
+              <label for="input-price">Avg wholesale price / carton</label>
+              <span id="val-price" class="roi-slider-val">&#8377; 320</span>
+            </div>
+            <input type="range" id="input-price" min="150" max="600" step="10" value="320">
+          </div>
+
+          <div class="roi-slider-field">
+            <div class="roi-slider-head">
+              <label for="input-margin">Agreed gross margin</label>
+              <span id="val-margin" class="roi-slider-val">8.0%</span>
+            </div>
+            <input type="range" id="input-margin" min="5.0" max="10.0" step="0.5" value="8.0">
+          </div>
+
+          <div class="roi-slider-field roi-slider-field-last">
+            <div class="roi-slider-head">
+              <label for="input-rotation">Stock turnaround cycle</label>
+              <span id="val-rotation" class="roi-slider-val">10 days</span>
+            </div>
+            <input type="range" id="input-rotation" min="5" max="30" step="1" value="10">
+            <div class="roi-slider-range"><span>5 · Fast sell-through</span><span>30 · Full inventory hold</span></div>
+          </div>
+        </div>
+
+        <div class="roi-result">
+          <span class="roi-result-label">Annualized ROI on working capital</span>
+          <div id="res-roi" class="roi-headline-stat">0%</div>
+          <p id="res-roi-caption" class="roi-result-caption">based on &#8377; 0 working capital</p>
+
+          <div class="roi-stat-list">
+            <div class="roi-stat-row"><span>Monthly gross profit</span><strong id="res-monthly-profit">&#8377; 0</strong></div>
+            <div class="roi-stat-row"><span>Monthly turnover</span><strong id="res-monthly-rev">&#8377; 0</strong></div>
+            <div class="roi-stat-row"><span>Required working capital</span><strong id="res-working-cap">&#8377; 0</strong></div>
+            <div class="roi-stat-row"><span>Estimated payback period</span><strong id="res-payback">&mdash;</strong></div>
+          </div>
+
+          <div class="roi-result-cta">
+            <span>Ready to secure your territorial rights?</span>
+            <a href="apply.html" class="btn btn-amber">Apply for Distributorship</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="roi-chart-card">
+        <h3 class="roi-chart-title">How your capital comes back</h3>
+        <p class="roi-chart-sub">Cumulative gross profit over 12 months, against the working capital you'd have tied up in stock.</p>
+        <div id="roi-chart" class="roi-chart"></div>
+        <div class="roi-chart-legend">
+          <span><i class="roi-legend-dot roi-legend-profit"></i>Cumulative gross profit</span>
+          <span><i class="roi-legend-dot roi-legend-capital"></i>Working capital required</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="roi-assumptions">
+        <h3>How this estimate is calculated</h3>
+        <ul>
+          <li><strong>Cartons, price, margin, and stock-hold days</strong> are the numbers you provide above.</li>
+          <li><strong>Turnover, profit, working capital, ROI, and payback</strong> are calculated directly from those four — nothing else feeds the result.</li>
+          <li>Working capital = cost of goods sold &times; (stock-hold days &divide; 30) — you're assumed to carry capital only for as long as stock sits before resale.</li>
+          <li>ROI is annualized gross profit &divide; working capital — a return-on-capital measure, not a bank-guaranteed yield.</li>
+          <li>Excludes rent, staff, transport, and other operating costs. Assumes resale at your input price. No credit or bad-debt risk is modelled, since none exists under a 100% cash &amp; carry model.</li>
+        </ul>
+        <p class="fine-print">Figures are estimates based on the inputs and assumptions above — not a guarantee of income, profit, or return.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-band">
+    <div class="closing-band-inner">
+      <div>
+        <h2>Ready to become a partner?</h2>
+        <p>Apply for your district or town, and the leadership desk will confirm your tier and terms.</p>
+      </div>
+    </div>
+    <div class="closing-actions">
+      <a href="apply.html" class="btn btn-amber">Become a Partner</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">MD</span>
+          <span class="brand-text">
+            <span class="brand-name">MASS DISTRIBUTORS</span>
+            <span class="brand-sub">Tamil Nadu Super Stockist</span>
+          </span>
+        </a>
+        <p>Premier cash-and-carry super stockist bridging manufacturers with sub-distributors and wholesalers across Tamil Nadu.</p>
+        <p class="footer-mono">GSTN: 33ACIFM4680N1ZQ</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="heading">Site</span>
+          <a href="product-catalog.html">Products</a>
+          <a href="margins-schemes.html">Margins &amp; Schemes</a>
+          <a href="district-network.html">Distribution Network</a>
+          <a href="roi-calculator.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Partnership</span>
+          <a href="apply.html">Become a Partner</a>
+          <a href="tel:+919942675710">+91 99426 75710</a>
+          <a href="https://wa.me/919942675710">WhatsApp the desk</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Warehouse</span>
+          <span style="font-size: 14px; line-height: 1.6;">No. 42/1, ST-1, Odakkadu,<br>Chithode, Erode &ndash; 638102, TN</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mass Distributors. Cash &amp; Carry B2B Partner Network.</span>
+      <span>FSSAI Labelling Compliant &middot; High Volume Supply Network</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js?v=2"></script>
+<script src="js/calculator.js?v=2"></script>
+</body>
+</html>

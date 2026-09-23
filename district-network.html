@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distribution Network | Mass Distributors</title>
+<meta name="description" content="Tamil Nadu district coverage for Mass Distributors — active hubs, open territories, dispatch turnaround, and how to apply for a district that's open.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">MD</span>
+      <span class="brand-text">
+        <span class="brand-name">MASS DISTRIBUTORS</span>
+        <span class="brand-sub">Tamil Nadu Super Stockist</span>
+      </span>
+    </a>
+    <nav class="nav-links" data-nav-links>
+      <a href="product-catalog.html" class="nav-link">Products</a>
+      <a href="margins-schemes.html" class="nav-link">Margins &amp; Schemes</a>
+      <a href="district-network.html" class="nav-link is-active">Distribution Network</a>
+      <a href="roi-calculator.html" class="nav-link">ROI Calculator</a>
+      <a href="apply.html" class="btn btn-amber nav-cta-mobile" style="display:none;">Become a Partner</a>
+    </nav>
+    <a href="apply.html" class="btn btn-amber nav-cta-desktop">Become a Partner</a>
+    <button class="hamburger" data-hamburger aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <div class="catalog-header container">
+    <span class="eyebrow" style="color: var(--amber-hover);">Distribution Network</span>
+    <h1>Is your territory open?</h1>
+    <p class="sub">Chithode, Erode is the central hub — dispatch runs same day locally out to 48 hours for the farthest districts. Search or filter to check any territory.</p>
+
+    <div class="catalog-search-row">
+      <div class="search-field">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="territory-search" placeholder="Search a district or town...">
+      </div>
+      <span class="result-count" id="result-count" style="margin-left: auto;"></span>
+    </div>
+
+    <div class="category-tabs-wrap">
+      <div class="category-tabs" id="region-pills"></div>
+    </div>
+
+    <div class="filter-toolbar">
+      <div class="filter-group">
+        <span class="filter-group-label">Status</span>
+        <div id="status-chips" class="flex" style="gap: 8px; flex-wrap: wrap;"></div>
+      </div>
+      <button type="button" class="clear-filters-btn" id="clear-filters-btn" hidden>Clear filters</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="catalog-grid" id="territory-grid"></div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">MD</span>
+          <span class="brand-text">
+            <span class="brand-name">MASS DISTRIBUTORS</span>
+            <span class="brand-sub">Tamil Nadu Super Stockist</span>
+          </span>
+        </a>
+        <p>Premier cash-and-carry super stockist bridging manufacturers with sub-distributors and wholesalers across Tamil Nadu.</p>
+        <p class="footer-mono">GSTN: 33ACIFM4680N1ZQ</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="heading">Site</span>
+          <a href="product-catalog.html">Products</a>
+          <a href="margins-schemes.html">Margins &amp; Schemes</a>
+          <a href="district-network.html">Distribution Network</a>
+          <a href="roi-calculator.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Partnership</span>
+          <a href="apply.html">Become a Partner</a>
+          <a href="tel:+919942675710">+91 99426 75710</a>
+          <a href="https://wa.me/919942675710">WhatsApp the desk</a>
+        </div>
+        <div class="footer-col">
+          <span class="heading">Warehouse</span>
+          <span style="font-size: 14px; line-height: 1.6;">No. 42/1, ST-1, Odakkadu,<br>Chithode, Erode &ndash; 638102, TN</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mass Distributors. Cash &amp; Carry B2B Partner Network.</span>
+      <span>FSSAI Labelling Compliant &middot; High Volume Supply Network</span>
+    </div>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawer-overlay">
+  <div class="drawer-panel" id="drawer-panel"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js?v=2"></script>
+<script src="js/network.js?v=6"></script>
+</body>
+</html>
