@@ -180,19 +180,6 @@ function listRowHtml(p) {
     '</div>';
 }
 
-function skeletonCardHtml() {
-  return '' +
-    '<div class="skeleton-card">' +
-      '<div class="skeleton-top">' +
-        '<div class="skeleton-block line w-60"></div>' +
-        '<div class="skeleton-block line w-40"></div>' +
-      '</div>' +
-      '<div class="skeleton-footer">' +
-        '<div class="skeleton-block line w-40"></div>' +
-      '</div>' +
-    '</div>';
-}
-
 function emptyStateHtml() {
   var isSearch = state.search !== '';
   var isFiltered = hasActiveFilters() || state.category !== 'All';
@@ -422,13 +409,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var grid = document.getElementById('product-grid');
   if (!grid) return;
 
-  // Simulated initial load (architecture demo — data is embedded, no real
-  // network call exists yet; this is where a future API fetch would go).
-  grid.innerHTML = Array(8).fill(0).map(skeletonCardHtml).join('');
-
-  window.setTimeout(function () {
-    renderAll();
-  }, 380);
+  // Data is embedded locally, not fetched — there's nothing to actually
+  // wait for, so render immediately rather than faking a loading delay.
+  // A previous version simulated a 380ms load with a skeleton screen for
+  // "architecture realism"; in practice that just made the page feel stuck
+  // before a jarring pop-in. The one-time fade-in below gives a real,
+  // honest sense of motion instead — applied only to this initial render,
+  // not to every later filter/search re-render (which should feel instant).
+  renderAll();
+  var list = document.getElementById('product-list');
+  grid.classList.add('catalog-fade-in');
+  if (list) list.classList.add('catalog-fade-in');
 
   document.getElementById('catalog-search').addEventListener('input', function (e) {
     state.search = e.target.value;
