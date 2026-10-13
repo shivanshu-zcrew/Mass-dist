@@ -4,48 +4,53 @@
 // these SKUs, so neither is shown or filterable — see the plan's data-
 // discipline note.
 
+// `image` is only set where a real product photo exists (from the client's
+// own Shan brand brochure) and clearly matches this exact SKU — a few items
+// (Punjabi Yakhni Pilau, both Zafrani Garam Masala packs) have no distinct
+// photo in that set and are deliberately left without one rather than
+// reusing a different product's image.
 var PRODUCTS = [
-  { code: '203002', name: 'Shan Pulau Biryani', pack: '50g', category: 'Biryani & Rice Mixes' },
-  { code: '202002', name: 'Shan Biryani', pack: '50g', category: 'Biryani & Rice Mixes' },
-  { code: '202007', name: 'Shan Biryani', pack: '25g', category: 'Biryani & Rice Mixes' },
-  { code: '204002', name: 'Shan Special Bombay Biryani', pack: '60g', category: 'Biryani & Rice Mixes' },
-  { code: '204007', name: 'Shan Special Bombay Biryani', pack: '30g', category: 'Biryani & Rice Mixes' },
-  { code: '202502', name: 'Shan Malay Chicken Biryani', pack: '60g', category: 'Biryani & Rice Mixes' },
-  { code: '202507', name: 'Shan Malay Chicken Biryani', pack: '30g', category: 'Biryani & Rice Mixes' },
-  { code: '201802', name: 'Shan Sindhi Biryani', pack: '60g', category: 'Biryani & Rice Mixes' },
-  { code: '202602', name: 'Shan Memoni Button Biryani', pack: '60g', category: 'Biryani & Rice Mixes' },
+  { code: '203002', name: 'Shan Pulau Biryani', pack: '50g', category: 'Biryani & Rice Mixes', image: 'images/products/pilau-biryani.png' },
+  { code: '202002', name: 'Shan Biryani', pack: '50g', category: 'Biryani & Rice Mixes', image: 'images/products/biryani-masala.png' },
+  { code: '202007', name: 'Shan Biryani', pack: '25g', category: 'Biryani & Rice Mixes', image: 'images/products/biryani-masala.png' },
+  { code: '204002', name: 'Shan Special Bombay Biryani', pack: '60g', category: 'Biryani & Rice Mixes', image: 'images/products/bombay-biryani.png' },
+  { code: '204007', name: 'Shan Special Bombay Biryani', pack: '30g', category: 'Biryani & Rice Mixes', image: 'images/products/bombay-biryani.png' },
+  { code: '202502', name: 'Shan Malay Chicken Biryani', pack: '60g', category: 'Biryani & Rice Mixes', image: 'images/products/malay-chicken-biryani.png' },
+  { code: '202507', name: 'Shan Malay Chicken Biryani', pack: '30g', category: 'Biryani & Rice Mixes', image: 'images/products/malay-chicken-biryani.png' },
+  { code: '201802', name: 'Shan Sindhi Biryani', pack: '60g', category: 'Biryani & Rice Mixes', image: 'images/products/sindhi-biryani.png' },
+  { code: '202602', name: 'Shan Memoni Button Biryani', pack: '60g', category: 'Biryani & Rice Mixes', image: 'images/products/memoni-mutton-biryani.png' },
   { code: '202702', name: 'Shan Punjabi Yakhni Pilau', pack: '50g', category: 'Biryani & Rice Mixes' },
 
-  { code: '202902', name: 'Shan Shami Kabab', pack: 'Standard', category: 'BBQ & Kabab Mixes' },
-  { code: '208002', name: 'Shan Seekh Kabab', pack: '50g', category: 'BBQ & Kabab Mixes' },
-  { code: '203202', name: 'Shan Chapli Kabab', pack: 'Standard', category: 'BBQ & Kabab Mixes' },
-  { code: '206002', name: 'Shan Chicken Tikka', pack: '50g', category: 'BBQ & Kabab Mixes' },
-  { code: '206007', name: 'Shan Chicken Tikka', pack: '25g', category: 'BBQ & Kabab Mixes' },
-  { code: '207002', name: 'Shan Tandoori Masala', pack: '50g', category: 'BBQ & Kabab Mixes' },
-  { code: '207007', name: 'Shan Tandoori Masala', pack: '25g', category: 'BBQ & Kabab Mixes' },
-  { code: '201002', name: 'Shan Tikka Boti', pack: '50g', category: 'BBQ & Kabab Mixes' },
+  { code: '202902', name: 'Shan Shami Kabab', pack: 'Standard', category: 'BBQ & Kabab Mixes', image: 'images/products/shami-kabab.png' },
+  { code: '208002', name: 'Shan Seekh Kabab', pack: '50g', category: 'BBQ & Kabab Mixes', image: 'images/products/seekh-kabab.png' },
+  { code: '203202', name: 'Shan Chapli Kabab', pack: 'Standard', category: 'BBQ & Kabab Mixes', image: 'images/products/chapli-kabab.png' },
+  { code: '206002', name: 'Shan Chicken Tikka', pack: '50g', category: 'BBQ & Kabab Mixes', image: 'images/products/chicken-tikka.png' },
+  { code: '206007', name: 'Shan Chicken Tikka', pack: '25g', category: 'BBQ & Kabab Mixes', image: 'images/products/chicken-tikka.png' },
+  { code: '207002', name: 'Shan Tandoori Masala', pack: '50g', category: 'BBQ & Kabab Mixes', image: 'images/products/tandoori-masala.png' },
+  { code: '207007', name: 'Shan Tandoori Masala', pack: '25g', category: 'BBQ & Kabab Mixes', image: 'images/products/tandoori-masala.png' },
+  { code: '201002', name: 'Shan Tikka Boti', pack: '50g', category: 'BBQ & Kabab Mixes', image: 'images/products/tikka-boti-masala.png' },
 
-  { code: '201102', name: 'Shan Nihari', pack: '60g', category: 'Curry & Meat Mixes' },
-  { code: '201302', name: 'Shan Achar Gosht', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '205002', name: 'Shan Chicken Masala', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '205007', name: 'Shan Chicken Masala', pack: '25g', category: 'Curry & Meat Mixes' },
-  { code: '209002', name: 'Shan Korma', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '202802', name: 'Shan Keema', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '201502', name: 'Shan Fried Fish', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '201202', name: 'Shan Karahi Gosht', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '202102', name: 'Shan Butter Chicken', pack: '50g', category: 'Curry & Meat Mixes' },
-  { code: '202402', name: 'Shan Meat Masala', pack: '100g', category: 'Curry & Meat Mixes' },
-  { code: '202202', name: 'Shan Paya Masala', pack: '50g', category: 'Curry & Meat Mixes' },
+  { code: '201102', name: 'Shan Nihari', pack: '60g', category: 'Curry & Meat Mixes', image: 'images/products/nihari.png' },
+  { code: '201302', name: 'Shan Achar Gosht', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/achar-gosht.png' },
+  { code: '205002', name: 'Shan Chicken Masala', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/chicken-masala.png' },
+  { code: '205007', name: 'Shan Chicken Masala', pack: '25g', category: 'Curry & Meat Mixes', image: 'images/products/chicken-masala.png' },
+  { code: '209002', name: 'Shan Korma', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/korma.png' },
+  { code: '202802', name: 'Shan Keema', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/keema.png' },
+  { code: '201502', name: 'Shan Fried Fish', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/fried-fish.png' },
+  { code: '201202', name: 'Shan Karahi Gosht', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/karahi.png' },
+  { code: '202102', name: 'Shan Butter Chicken', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/butter-chicken.png' },
+  { code: '202402', name: 'Shan Meat Masala', pack: '100g', category: 'Curry & Meat Mixes', image: 'images/products/meat-masala.png' },
+  { code: '202202', name: 'Shan Paya Masala', pack: '50g', category: 'Curry & Meat Mixes', image: 'images/products/paya.png' },
 
-  { code: '201902', name: 'Shan Haleem Masala', pack: '50g', category: 'Specialty & General Spice Mixes' },
-  { code: '203302', name: 'Shan Shahi Haleem', pack: '300g', category: 'Specialty & General Spice Mixes' },
-  { code: '202302', name: 'Shan Chana Masala', pack: '100g', category: 'Specialty & General Spice Mixes' },
-  { code: '201602', name: 'Shan Chaat Masala', pack: '100g', category: 'Specialty & General Spice Mixes' },
-  { code: '211502', name: 'Shan Zafrani Garam Masala (115)', pack: '50g', category: 'Specialty & General Spice Mixes' },
-  { code: '211503', name: 'Shan Zafrani Garam Masala (130)', pack: '50g', category: 'Specialty & General Spice Mixes' },
+  { code: '201902', name: 'Shan Haleem Masala', pack: '50g', category: 'Specialty & General Spice Mixes', image: 'images/products/haleem-masala.png' },
+  { code: '203302', name: 'Shan Shahi Haleem', pack: '300g', category: 'Specialty & General Spice Mixes', image: 'images/products/shahi-haleem.png' },
+  { code: '202302', name: 'Shan Chana Masala', pack: '100g', category: 'Specialty & General Spice Mixes', image: 'images/products/chana-masala.png' },
+  { code: '201602', name: 'Shan Chaat Masala', pack: '100g', category: 'Specialty & General Spice Mixes', image: 'images/products/chaat-masala.png' },
+  { code: '211502', name: 'Shan Zafrani Garam Masala (115)', pack: '50g', category: 'Specialty & General Spice Mixes', image: 'images/products/garam-masala.png' },
+  { code: '211503', name: 'Shan Zafrani Garam Masala (130)', pack: '50g', category: 'Specialty & General Spice Mixes', image: 'images/products/garam-masala.png' },
 
-  { code: '204302', name: 'Shahi Paneer Masala', pack: '100g', category: 'Vegetarian Mixes' },
-  { code: '204502', name: 'Paneer Butter Masala', pack: '100g', category: 'Vegetarian Mixes' }
+  { code: '204302', name: 'Shahi Paneer Masala', pack: '100g', category: 'Vegetarian Mixes', image: 'images/products/shahi-paneer.png' },
+  { code: '204502', name: 'Paneer Butter Masala', pack: '100g', category: 'Vegetarian Mixes', image: 'images/products/paneer-butter-masala.png' }
 ];
 
 var CATEGORY_META = {
@@ -138,8 +143,13 @@ function smallIcon(meta, size) {
 function cardHtml(p) {
   var meta = CATEGORY_META[p.category];
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
+  var media = p.image
+    ? '<span class="product-card-photo"><img src="' + p.image + '" alt="' + p.name + ' pack" loading="lazy"></span>'
+    : '<span class="product-card-photo product-card-photo-fallback" style="background:' + meta.bg + '; color:' + meta.fg + ';">' + smallIcon(meta, 26) + '</span>';
   return '' +
     '<div class="product-card" data-code="' + p.code + '">' +
+      '<button type="button" class="product-card-media" data-open-detail="' + p.code + '" tabindex="-1" aria-hidden="true">' + media + '</button>' +
+      '<div class="product-card-body">' +
       '<button type="button" class="product-card-clickable" data-open-detail="' + p.code + '" aria-label="View details for ' + p.name + '">' +
         '<span class="item-code-top">#' + p.code + '</span>' +
         '<span class="name-row">' +
@@ -158,16 +168,18 @@ function cardHtml(p) {
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' +
         '</button>' +
       '</div>' +
+      '</div>' +
     '</div>';
 }
 
 function listRowHtml(p) {
   var meta = CATEGORY_META[p.category];
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
+  var thumb = p.image ? '<img class="list-thumb" src="' + p.image + '" alt="" loading="lazy">' : '';
   return '' +
     '<div class="list-row" data-code="' + p.code + '">' +
       '<div class="list-cat-bar" style="background:' + meta.fg + ';"></div>' +
-      '<span class="list-name" data-open-detail="' + p.code + '">' + p.name + '</span>' +
+      '<span class="list-name" data-open-detail="' + p.code + '">' + thumb + '<span>' + p.name + '</span></span>' +
       '<span class="list-category">' + meta.short + '</span>' +
       '<span class="list-pack">' + p.pack + '</span>' +
       '<span class="list-code">' + p.code + '</span>' +
@@ -303,14 +315,21 @@ function openDetail(code) {
   var panel = document.getElementById('drawer-panel');
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
 
+  var visual = p.image
+    ? '<div class="drawer-visual drawer-visual-photo">' +
+        '<img src="' + p.image + '" alt="' + p.name + ' pack">' +
+        '<span class="product-category-label is-badge" style="background:' + meta.bg + '; color:' + meta.fg + ';">' + p.category + '</span>' +
+      '</div>'
+    : '<div class="drawer-visual" style="background:' + meta.bg + '; color:' + meta.fg + ';">' +
+        smallIcon(meta, 26) +
+        '<span class="product-category-label" style="color:' + meta.fg + '; opacity: 0.85;">' + p.category + '</span>' +
+      '</div>';
+
   panel.innerHTML = '' +
     '<button class="drawer-close" data-close-drawer aria-label="Close">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
     '</button>' +
-    '<div class="drawer-visual" style="background:' + meta.bg + '; color:' + meta.fg + ';">' +
-      smallIcon(meta, 26) +
-      '<span class="product-category-label" style="color:' + meta.fg + '; opacity: 0.85;">' + p.category + '</span>' +
-    '</div>' +
+    visual +
     '<div class="drawer-content">' +
       '<div>' +
         '<h2 style="font-size: 22px;">' + p.name + '</h2>' +
@@ -390,7 +409,10 @@ function openEnquiryPanel() {
           ? '<p class="text-slate" style="font-size: 14px; padding: 24px 0;">No products added yet.</p>'
           : items.map(function (p) {
               return '<div class="enquiry-item-row" data-enquiry-row="' + p.code + '">' +
-                '<span>' + p.name + ' <span class="text-slate mono" style="font-size:12px;">(' + p.pack + ')</span></span>' +
+                '<span class="enquiry-item-info">' +
+                  (p.image ? '<img class="enquiry-thumb" src="' + p.image + '" alt="">' : '') +
+                  '<span>' + p.name + ' <span class="text-slate mono" style="font-size:12px;">(' + p.pack + ')</span></span>' +
+                '</span>' +
                 '<button type="button" class="remove-btn" data-toggle-enquiry="' + p.code + '">Remove</button>' +
               '</div>';
             }).join('')) +
