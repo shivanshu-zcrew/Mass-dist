@@ -144,7 +144,7 @@ function cardHtml(p) {
   var meta = CATEGORY_META[p.category];
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
   var media = p.image
-    ? '<span class="product-card-photo"><img src="' + p.image + '" alt="' + p.name + ' pack" loading="lazy"></span>'
+    ? '<span class="product-card-photo img-wrap"><img class="img-fade" src="' + p.image + '" alt="' + p.name + ' pack" loading="lazy"></span>'
     : '<span class="product-card-photo product-card-photo-fallback" style="background:' + meta.bg + '; color:' + meta.fg + ';">' + smallIcon(meta, 26) + '</span>';
   return '' +
     '<div class="product-card" data-code="' + p.code + '">' +
@@ -175,7 +175,7 @@ function cardHtml(p) {
 function listRowHtml(p) {
   var meta = CATEGORY_META[p.category];
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
-  var thumb = p.image ? '<img class="list-thumb" src="' + p.image + '" alt="" loading="lazy">' : '';
+  var thumb = p.image ? '<span class="list-thumb img-wrap"><img class="img-fade" src="' + p.image + '" alt="" loading="lazy"></span>' : '';
   return '' +
     '<div class="list-row" data-code="' + p.code + '">' +
       '<div class="list-cat-bar" style="background:' + meta.fg + ';"></div>' +
@@ -316,8 +316,8 @@ function openDetail(code) {
   var isAdded = state.enquiry.indexOf(p.code) !== -1;
 
   var visual = p.image
-    ? '<div class="drawer-visual drawer-visual-photo">' +
-        '<img src="' + p.image + '" alt="' + p.name + ' pack">' +
+    ? '<div class="drawer-visual drawer-visual-photo img-wrap">' +
+        '<img class="img-fade" src="' + p.image + '" alt="' + p.name + ' pack">' +
         '<span class="product-category-label is-badge" style="background:' + meta.bg + '; color:' + meta.fg + ';">' + p.category + '</span>' +
       '</div>'
     : '<div class="drawer-visual" style="background:' + meta.bg + '; color:' + meta.fg + ';">' +
@@ -410,7 +410,7 @@ function openEnquiryPanel() {
           : items.map(function (p) {
               return '<div class="enquiry-item-row" data-enquiry-row="' + p.code + '">' +
                 '<span class="enquiry-item-info">' +
-                  (p.image ? '<img class="enquiry-thumb" src="' + p.image + '" alt="">' : '') +
+                  (p.image ? '<span class="enquiry-thumb img-wrap"><img class="img-fade" src="' + p.image + '" alt=""></span>' : '') +
                   '<span>' + p.name + ' <span class="text-slate mono" style="font-size:12px;">(' + p.pack + ')</span></span>' +
                 '</span>' +
                 '<button type="button" class="remove-btn" data-toggle-enquiry="' + p.code + '">Remove</button>' +
@@ -424,6 +424,34 @@ function openEnquiryPanel() {
 
   overlay.classList.add('is-open');
 }
+
+// ------------------------------------------------------------------ image loading
+// Images are injected via innerHTML, so load/error are caught with one
+// capture-phase listener (they don't bubble). Until an image loads its
+// wrapper shows a shimmer; on error the shimmer stops and the wrapper
+// falls back to a neutral box.
+
+function markImage(img, ok) {
+  var wrap = img.parentNode;
+  if (ok) img.classList.add('is-loaded');
+  else img.classList.add('is-failed');
+  if (wrap && wrap.classList) wrap.classList.add(ok ? 'is-ready' : 'is-failed');
+}
+
+document.addEventListener('load', function (e) {
+  if (e.target.classList && e.target.classList.contains('img-fade')) markImage(e.target, true);
+}, true);
+document.addEventListener('error', function (e) {
+  if (e.target.classList && e.target.classList.contains('img-fade')) markImage(e.target, false);
+}, true);
+
+// Cached images can finish before the listener sees them.
+new MutationObserver(function () {
+  var imgs = document.querySelectorAll('img.img-fade:not(.is-loaded):not(.is-failed)');
+  for (var i = 0; i < imgs.length; i++) {
+    if (imgs[i].complete) markImage(imgs[i], imgs[i].naturalWidth > 0);
+  }
+}).observe(document.body || document.documentElement, { childList: true, subtree: true });
 
 // ------------------------------------------------------------------ init
 
