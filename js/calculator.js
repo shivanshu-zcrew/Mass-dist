@@ -36,8 +36,8 @@ function renderROIChart(monthlyProfit, workingCapital, paybackMonths) {
   var COLOR_INK = '#12181F';
   var COLOR_SLATE_SOFT = '#8B93A0';
   var COLOR_BORDER = '#DADEE4';
-  var COLOR_AMBER = '#D97B34';
-  var COLOR_AMBER_HOVER = '#BE6726';
+  var COLOR_AMBER = '#F26A1B';
+  var COLOR_AMBER_HOVER = '#C94F0A';
   var COLOR_GREEN = '#2F7A56';
   var FONT = "'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif";
 

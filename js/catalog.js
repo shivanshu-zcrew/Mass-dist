@@ -337,7 +337,7 @@ function openDetail(code) {
       '<div>' +
         '<div class="drawer-spec-row" style="border-top:none;"><span class="label">Item code</span><span class="val mono">' + p.code + '</span></div>' +
         '<div class="drawer-spec-row"><span class="label">Pack size</span><span class="val">' + p.pack + '</span></div>' +
-        '<div class="drawer-spec-row"><span class="label">Distribution</span><span class="val">Tamil Nadu, cash &amp; carry</span></div>' +
+        '<div class="drawer-spec-row"><span class="label">Distribution</span><span class="val">Tamil Nadu</span></div>' +
       '</div>' +
       '<p class="text-slate" style="font-size: 13px; line-height: 1.6;">Pricing and live stock status aren’t published here — add this item to your enquiry and the leadership desk will confirm current rates and availability.</p>' +
     '</div>' +

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apply for Distributorship | Mass Distributors</title>
-<meta name="description" content="Apply for exclusive cash-and-carry stockist rights in your Tamil Nadu district, or reach the Mass Distributors leadership desk directly on WhatsApp.">
-<link rel="icon" href="data:,">
+<meta name="description" content="Apply for exclusive stockist rights in your Tamil Nadu district, or reach the Mass Distributors leadership desk directly on WhatsApp.">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,11 +16,7 @@
 <header class="nav">
   <div class="nav-inner container">
     <a href="index.html" class="brand">
-      <span class="brand-mark">MD</span>
-      <span class="brand-text">
-        <span class="brand-name">MASS DISTRIBUTORS</span>
-        <span class="brand-sub">Tamil Nadu Super Stockist</span>
-      </span>
+      <span class="brand-logo"><img src="images/logo.png" alt="Mass Distributors — amplify your taste" width="118" height="39"></span>
     </a>
     <nav class="nav-links" data-nav-links>
       <a href="product-catalog.html" class="nav-link">Products</a>
@@ -65,6 +61,18 @@
                   <span class="apply-field-error" id="err-whatsapp">Enter a valid 10-digit mobile number.</span>
                 </div>
               </div>
+              <div class="apply-field-row apply-field-row-spaced">
+                <div class="apply-field">
+                  <label for="email">Email <span class="opt">(optional)</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" maxlength="120" placeholder="name@company.com">
+                  <span class="apply-field-error" id="err-email">Enter a valid email address, or leave this blank.</span>
+                </div>
+                <div class="apply-field">
+                  <label for="altphone">Alternate contact number <span class="opt">(optional)</span></label>
+                  <input type="tel" id="altphone" name="altphone" inputmode="numeric" maxlength="10" placeholder="9876543210">
+                  <span class="apply-field-error" id="err-altphone">Enter a valid 10-digit number, or leave this blank.</span>
+                </div>
+              </div>
             </div>
 
             <div class="apply-group">
@@ -73,6 +81,21 @@
                 <label for="company">Company / enterprise name <span class="req">*</span></label>
                 <input type="text" id="company" name="company" placeholder="e.g. Kovai Traders" required>
                 <span class="apply-field-error" id="err-company">Enter your company or enterprise name.</span>
+              </div>
+              <div class="apply-field">
+                <label for="address">Company address <span class="opt">(optional)</span></label>
+                <textarea id="address" name="address" rows="2" maxlength="250" autocomplete="street-address" placeholder="Shop / godown address, street, area, PIN code"></textarea>
+              </div>
+              <div class="apply-field-row">
+                <div class="apply-field">
+                  <label for="city">City <span class="opt">(optional)</span></label>
+                  <input type="text" id="city" name="city" autocomplete="address-level2" maxlength="60" placeholder="e.g. Erode">
+                </div>
+                <div class="apply-field">
+                  <label for="gstin">GSTIN <span class="opt">(optional)</span></label>
+                  <input type="text" id="gstin" name="gstin" maxlength="15" autocapitalize="characters" spellcheck="false" placeholder="15-character GSTIN">
+                  <span class="apply-field-error" id="err-gstin">Enter a valid 15-character GSTIN, or leave this blank.</span>
+                </div>
               </div>
             </div>
 
@@ -128,7 +151,7 @@
 
             <div class="apply-submit-row">
               <button type="submit" class="btn btn-amber apply-submit-btn">Submit Application</button>
-              <p class="apply-hint">By submitting, you agree to be contacted by the leadership desk about this request.</p>
+              <p class="apply-hint">By submitting, you agree to be contacted by the leadership desk about this request, and to our <a href="terms.html">Terms &amp; Conditions</a>.</p>
             </div>
           </form>
 
@@ -136,8 +159,9 @@
             <span class="apply-success-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <h2>Application received.</h2>
-            <p>Someone from the leadership desk will review your district and capability, then reach out within one business day to confirm your tier and next steps. If it's urgent, call or WhatsApp the numbers alongside this form.</p>
+            <h2>One last step &mdash; send it on WhatsApp.</h2>
+            <p>We've opened WhatsApp with your application filled in. <b>Tap Send</b> in WhatsApp to deliver it to the leadership desk &mdash; your application isn't received until you do. We'll then reach out within one business day to confirm your tier and next steps.</p>
+            <a id="apply-wa-link" class="btn btn-amber apply-wa-btn" href="https://wa.me/919942675710" target="_blank" rel="noopener">Open WhatsApp again</a>
           </div>
         </div>
 
@@ -187,13 +211,9 @@
     <div class="footer-top">
       <div class="footer-brand-block">
         <a href="index.html" class="brand">
-          <span class="brand-mark">MD</span>
-          <span class="brand-text">
-            <span class="brand-name">MASS DISTRIBUTORS</span>
-            <span class="brand-sub">Tamil Nadu Super Stockist</span>
-          </span>
+          <span class="brand-logo"><img src="images/logo.png" alt="Mass Distributors — amplify your taste" width="118" height="39"></span>
         </a>
-        <p>Premier cash-and-carry super stockist bridging manufacturers with sub-distributors and wholesalers across Tamil Nadu.</p>
+        <p>Premier super stockist bridging manufacturers with sub-distributors and wholesalers across Tamil Nadu.</p>
         <p class="footer-mono">GSTN: 33ACIFM4680N1ZQ</p>
       </div>
       <div class="footer-cols">
@@ -203,6 +223,7 @@
           <a href="margins-schemes.html">Margins &amp; Schemes</a>
           <a href="district-network.html">Distribution Network</a>
           <a href="roi-calculator.html">ROI Calculator</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
         </div>
         <div class="footer-col">
           <span class="heading">Partnership</span>
@@ -218,7 +239,7 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-text">
-        <span>&copy; 2026 Mass Distributors. Cash &amp; Carry B2B Partner Network.</span>
+        <span>&copy; 2026 Mass Distributors. B2B Partner Network.</span>
         <span>FSSAI Labelling Compliant &middot; High Volume Supply Network</span>
       </div>
         <div class="footer-social">
