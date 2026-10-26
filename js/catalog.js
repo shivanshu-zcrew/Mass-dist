@@ -345,7 +345,7 @@ function openDetail(code) {
       '<button type="button" class="btn-enquiry' + (isAdded ? ' is-added' : '') + '" style="flex:1;" data-toggle-enquiry="' + p.code + '">' +
         (isAdded ? 'Added to enquiry' : '+ Add to Enquiry') +
       '</button>' +
-      '<a href="https://wa.me/919942675710?text=' + encodeURIComponent('Hi, I\'d like to ask about ' + p.name + ' (' + p.code + ').') + '" class="btn btn-outline-light" style="padding: 12px 16px;" target="_blank" rel="noopener">Ask on WhatsApp</a>' +
+      '<a href="https://wa.me/919994222846?text=' + encodeURIComponent('Hi, I\'d like to ask about ' + p.name + ' (' + p.code + ').') + '" class="btn btn-outline-light" style="padding: 12px 16px;" target="_blank" rel="noopener">Ask on WhatsApp</a>' +
     '</div>';
 
   overlay.classList.add('is-open');
@@ -384,7 +384,7 @@ function toggleEnquiry(code) {
 function enquiryWhatsAppHref(items) {
   var lines = items.map(function (p) { return '- ' + p.name + ' (' + p.pack + ')'; }).join('\n');
   var msg = 'Hi, I\'d like to enquire about these products:\n' + lines + '\n\nPlease share catalog and margin details.';
-  return 'https://wa.me/919942675710?text=' + encodeURIComponent(msg);
+  return 'https://wa.me/919994222846?text=' + encodeURIComponent(msg);
 }
 
 function openEnquiryPanel() {

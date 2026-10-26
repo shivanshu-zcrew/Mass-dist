@@ -42,7 +42,7 @@ function statusPillHtml(d) {
 function territoryCardHtml(d) {
   var footer = d.statusCat === 'open'
     ? '<a href="apply.html?town=' + encodeURIComponent(d.name) + '" data-prefill-town="' + d.name + '" class="btn btn-amber">Apply for Territory</a>'
-    : '<a href="https://wa.me/919942675710?text=' + encodeURIComponent('Hi, I have a question about the ' + d.name + ' territory.') + '" class="quiet-link" target="_blank" rel="noopener">Ask about this hub <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
+    : '<a href="https://wa.me/919994222846?text=' + encodeURIComponent('Hi, I have a question about the ' + d.name + ' territory.') + '" class="quiet-link" target="_blank" rel="noopener">Ask about this hub <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
 
   return '' +
     '<div class="territory-card is-' + d.statusCat + '">' +
@@ -94,7 +94,7 @@ function emptyStateHtml() {
       '<h3>No territories found</h3>' +
       '<p>' + message + '</p>' +
       (isSearch
-        ? '<a href="https://wa.me/919942675710?text=' + encodeURIComponent('Hi, I want to check if you cover ' + state.search + '.') + '" class="btn btn-amber" target="_blank" rel="noopener" style="margin-top:10px;">Ask on WhatsApp</a>'
+        ? '<a href="https://wa.me/919994222846?text=' + encodeURIComponent('Hi, I want to check if you cover ' + state.search + '.') + '" class="btn btn-amber" target="_blank" rel="noopener" style="margin-top:10px;">Ask on WhatsApp</a>'
         : '<a href="#" class="link-arrow" data-reset-filters>Clear filters</a>') +
     '</div>';
 }
@@ -164,7 +164,7 @@ function openTerritory(name) {
     '</div>' +
     '<div class="drawer-footer">' +
       footer +
-      '<a href="https://wa.me/919942675710?text=' + encodeURIComponent('Hi, I have a question about the ' + d.name + ' territory.') + '" class="btn btn-outline-light" style="padding: 12px 16px;" target="_blank" rel="noopener">WhatsApp</a>' +
+      '<a href="https://wa.me/919994222846?text=' + encodeURIComponent('Hi, I have a question about the ' + d.name + ' territory.') + '" class="btn btn-outline-light" style="padding: 12px 16px;" target="_blank" rel="noopener">WhatsApp</a>' +
     '</div>';
 
   overlay.classList.add('is-open');
